@@ -1,16 +1,14 @@
-﻿class Program
+﻿var names = new List<string> { "Satoshi", "Ana", "Felipe" };
+foreach (var name in names)
 {
-    static void Main()
-    {
-        Console.WriteLine("Please input a number; not a character");
-        var str = Console.ReadLine();
-        try
-        {
-            var n = int.Parse(str);
-            Console.WriteLine(n);
-        }
-        catch {
-            Console.WriteLine(str);
-        }
-    }
+    Console.WriteLine($"Hello {name.ToUpper()}");
+}
+
+Console.WriteLine();
+names.Add("Maria");
+names.Add("Bill");
+names.Remove("Ana");
+foreach (var name in names)
+{
+    Console.WriteLine($"Hello {name.ToUpper()}");
 }
