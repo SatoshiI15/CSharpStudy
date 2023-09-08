@@ -1,14 +1,14 @@
-﻿var names = new List<string> { "Satoshi", "Ana", "Felipe" };
-foreach (var name in names)
-{
-    Console.WriteLine($"Hello {name.ToUpper()}");
-}
+﻿namespace DotnetTutorial;
 
-Console.WriteLine();
-names.Add("Maria");
-names.Add("Bill");
-names.Remove("Ana");
-foreach (var name in names)
+internal class Program
 {
-    Console.WriteLine($"Hello {name.ToUpper()}");
+    static void Main(string[] args)
+    {
+        Console.WriteLine("What's your name?");
+        var name = Console.ReadLine();
+        var currentDate = DateTime.Now;
+        Console.WriteLine($"{Environment.NewLine}Hello, {name}, on {currentDate:d} at {currentDate:t}!");
+        Console.WriteLine($"{Environment.NewLine}Press any key to exit...");
+        Console.ReadKey(true);
+    }
 }
