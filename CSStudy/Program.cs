@@ -1,15 +1,12 @@
-﻿var names = new List<string> { "Satoshi", "Ana", "Felipe" };
-foreach (var name in names)
+﻿namespace CSStudy
 {
-    Console.WriteLine($"Hello {name.ToUpper()}");
-}
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] nums1 = new int[] { 1, 2, 3 };
 
-Console.WriteLine();
-names.Add("Maria");
-names.Add("Bill");
-names.Remove("Ana");
-foreach (var name in names)
-{
-    Console.WriteLine($"Hello {name.ToUpper()}");
+            int[] nums2 = nums1.ToArray();
+        }
+    }
 }
-
