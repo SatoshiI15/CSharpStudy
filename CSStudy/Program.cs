@@ -1,18 +1,22 @@
-﻿namespace CSStudy
+﻿using System.Runtime.CompilerServices;
+
+namespace CSStudy
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int[,] arr = { { 1, 2, 3 }, { 3, 4, 5, }, { 6, 7, 8, } };
+            string strEmpty = string.Empty;
+            string strNull = null;
 
-            int lengthAll = arr.Length;
-            int length1 = arr.GetLength(0);
-            int length2 = arr.GetLength(1);
-
-            Console.WriteLine(lengthAll);
-            Console.WriteLine(length1);
-            Console.WriteLine(length2);
+            if(string.IsNullOrEmpty(strEmpty))
+            {
+                Console.WriteLine("strEmpty is an empty string");
+            }
+            if(string.IsNullOrEmpty(strNull))
+            {
+                Console.WriteLine("strNull is a null string");
+            }
         }
     }
 }
