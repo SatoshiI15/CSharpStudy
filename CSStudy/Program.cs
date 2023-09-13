@@ -1,22 +1,18 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Linq;
 
-namespace CSStudy
+List<int> nums = new List<int>()
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            string strEmpty = string.Empty;
-            string strNull = null;
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+};
 
-            if(string.IsNullOrEmpty(strEmpty))
-            {
-                Console.WriteLine("strEmpty is an empty string");
-            }
-            if(string.IsNullOrEmpty(strNull))
-            {
-                Console.WriteLine("strNull is a null string");
-            }
-        }
-    }
+IEnumerable<int> evensList = nums.Where(n => n % 2 == 0).ToList();
+
+int[] evensArray = nums.Where(n => n % 2 == 0).ToArray();
+
+foreach (var n in evensList)
+{
+    Console.WriteLine("{0} ", n);
 }
