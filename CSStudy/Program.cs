@@ -1,15 +1,13 @@
-﻿var names = new List<string> { "Satoshi", "Ana", "Felipe" };
-foreach (var name in names)
+﻿class Program
 {
-    Console.WriteLine($"Hello {name.ToUpper()}");
-}
+    static void Main(string[] args)
+    {
+        int num1 = 25;
+        int num2 = 2;
 
-Console.WriteLine();
-names.Add("Maria");
-names.Add("Bill");
-names.Remove("Ana");
-foreach (var name in names)
-{
-    Console.WriteLine($"Hello {name.ToUpper()}");
-}
+        double real = (double)num2 / num1;
+        Console.WriteLine(real);
 
+        Console.ReadLine();
+    }
+}
