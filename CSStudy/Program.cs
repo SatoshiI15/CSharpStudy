@@ -1,15 +1,34 @@
-﻿var names = new List<string> { "Satoshi", "Ana", "Felipe" };
-foreach (var name in names)
+﻿namespace DistanceConverter
 {
-    Console.WriteLine($"Hello {name.ToUpper()}");
-}
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			if (args.Length >= 1 && args[0] == "-tom")
+			{
+				PrintFeetToMeterList(1, 10);
+			}
+			else
+			{
+				PrintMeterToFootList(1, 10);
+			}
+		}
+		static void PrintFeetToMeterList(int start, int stop)
+		{
+			for (int feet = start; feet <= stop; feet++)
+			{
+				double meter = FeetConverter.ToMeter(feet);
+				Console.WriteLine("{0} ft = {1:0.0000} m", feet, meter);
+			}
+		}
+		static void PrintMeterToFootList(int start, int stop)
+		{
+			for (int meter = start; meter <= stop; meter++)
+			{
+				double feet = FeetConverter.FromMeter(meter);
+				Console.WriteLine("{0} m = {1:0.0000} ft", meter, feet);
+			}
+		}
 
-Console.WriteLine();
-names.Add("Maria");
-names.Add("Bill");
-names.Remove("Ana");
-foreach (var name in names)
-{
-    Console.WriteLine($"Hello {name.ToUpper()}");
+	}
 }
-
