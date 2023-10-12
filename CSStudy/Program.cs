@@ -1,15 +1,17 @@
-﻿var names = new List<string> { "Satoshi", "Ana", "Felipe" };
-foreach (var name in names)
-{
-    Console.WriteLine($"Hello {name.ToUpper()}");
-}
+﻿using System.IO;
 
-Console.WriteLine();
-names.Add("Maria");
-names.Add("Bill");
-names.Remove("Ana");
-foreach (var name in names)
+namespace SalesCalculator
 {
-    Console.WriteLine($"Hello {name.ToUpper()}");
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			SalesCounter sales = new SalesCounter("sales.csv");
+			Dictionary<string, int> amountPerStore = sales.GetPerStoreSales();
+			foreach(KeyValuePair<string, int> obj in amountPerStore)
+			{
+				Console.WriteLine("{0}, {1}", obj.Key, obj.Value);
+			}
+		}
+	}
 }
-
