@@ -1,15 +1,9 @@
-﻿var names = new List<string> { "Satoshi", "Ana", "Felipe" };
-foreach (var name in names)
+﻿namespace SongShower
 {
-    Console.WriteLine($"Hello {name.ToUpper()}");
+	public class Program {
+		static void Main(string[] args)
+		{
+			Console.WriteLine();
+		}
+	}
 }
-
-Console.WriteLine();
-names.Add("Maria");
-names.Add("Bill");
-names.Remove("Ana");
-foreach (var name in names)
-{
-    Console.WriteLine($"Hello {name.ToUpper()}");
-}
-
