@@ -1,15 +1,36 @@
-﻿var names = new List<string> { "Satoshi", "Ana", "Felipe" };
-foreach (var name in names)
+﻿namespace CSStudy
 {
-    Console.WriteLine($"Hello {name.ToUpper()}");
-}
+    class QiitaPost : IAuthorQiitaPost, IReaderQiitaPost
+    {
+        private string m_title;
+        private string m_text;
 
-Console.WriteLine();
-names.Add("Maria");
-names.Add("Bill");
-names.Remove("Ana");
-foreach (var name in names)
-{
-    Console.WriteLine($"Hello {name.ToUpper()}");
+        public QiitaPost(string title, string text)
+        {
+            this.m_title = title;
+            this.m_text = text;
+        }
+        public string Title => m_title;
+        public string Text => m_text;
+        public int LGTMCount { get; private set; }
+        public int StockCount { get; private set; }
+        public void LGTM()
+        {
+            ++LGTMCount;
+        }
+        public void Stock()
+        {
+            ++StockCount;
+        }
+        public void Delete()
+        {
+            m_title = string.Empty;
+            m_text = string.Empty;
+        }
+        static void Main(string[] args)
+        {
+            IAuthorQiitaPost post = new QiitaPost("Title", "Text");
+            post.LGTM();
+        }
+    }
 }
-
